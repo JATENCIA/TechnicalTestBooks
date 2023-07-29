@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(
   cors({
-    origin: 'https://technical-test-books-qq9k.vercel.app/',
+    origin: 'https://technical-test-books-qq9k.vercel.app',
     credentials: true
   })
 )
