@@ -86,3 +86,34 @@ TechnicalTestBooks/
 - `.env`: Archivo de configuración para variables de entorno del backend.
 - `server.js`: Archivo principal del backend.
 - `App.js`: Archivo principal del frontend.
+
+Deploy
+Para desplegar la aplicación de reseñas de libros en un servidor de producción, sigue estos pasos:
+
+Preparar el código para producción:
+
+Antes de hacer el deploy, asegúrate de haber creado una versión de producción para el frontend y el backend. En el caso del frontend, ejecuta el siguiente comando para generar los archivos optimizados:
+
+cd client
+npm run build
+
+Configurar el servidor de producción:
+
+Asegúrate de tener acceso a un servidor donde puedas desplegar tu aplicación. Puedes utilizar servicios de hosting como Heroku, AWS, DigitalOcean, entre otros.
+
+Desplegar el backend:
+
+Sube los archivos del backend a tu servidor de producción. Asegúrate de instalar las dependencias usando npm install en la carpeta del backend y luego ejecuta el servidor con el siguiente comando:
+
+cd server
+npm start
+
+Desplegar el frontend:
+
+Sube los archivos de la carpeta build del frontend a tu servidor de producción. Configura el servidor web (por ejemplo, Nginx o Apache) para que apunte a la carpeta de producción del frontend.
+
+Configurar el archivo .env (Opcional):
+
+Si tienes variables de entorno en tu aplicación, configúralas en el servidor de producción mediante un archivo .env o configurándolas directamente en el servidor.
+
+¡Listo! Ahora la aplicación de reseñas de libros estará disponible para su uso en producción. Verifica que todo funcione correctamente y disfruta de la experiencia de reseñar y explorar libros.
