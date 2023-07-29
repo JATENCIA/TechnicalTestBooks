@@ -4,7 +4,7 @@ import RegisterPage from './pages/RegisterPage'
 import { AuthProvider } from './context/AuthContex'
 import BookDetaild from './pages/BookDetaild'
 import BooksPage from './pages/BooksPage'
-import ProfilePage from './pages/ProfilePage'
+
 import ProtectedRoute from './ProtectedRoute'
 import { ReviewProvider } from './context/ReviewsContex'
 import { BooksProvider } from './context/BooksContex'
@@ -24,7 +24,6 @@ function App() {
 
               <Route element={<ProtectedRoute />}>
                 <Route path='/detail/:id' element={<BookDetaild />} />
-                <Route path='/profile' element={<ProfilePage />} />
               </Route>
             </Routes>
           </BrowserRouter>

@@ -25,9 +25,7 @@ const NavBar = () => {
             <li className='flex items-center justify-center text-zinc-300 transition font-Barlow font-bold '>
               {user.username}
             </li>
-            <li className='flex items-center justify-center  hover:text-green-300 transition font-Fraunces font-bold'>
-              <Link to='/profile'>My profile</Link>
-            </li>
+
             <li className='text-red-500  flex items-center font-bold hover:text-red-700 transition'>
               <Link to='/' onClick={logout}>
                 Logo ut
