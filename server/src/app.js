@@ -12,12 +12,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use(
-  cors({
-    origin: 'https://technical-test-books-qq9k.vercel.app/',
-    credentials: true
-  })
-)
+app.use(cors())
 app.options('*', cors())
 
 app.use(morgan('dev'))
