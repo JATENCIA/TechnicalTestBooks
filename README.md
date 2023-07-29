@@ -46,7 +46,7 @@ JWT_SECRET=
 
 npm run dev
 
-Una vez que hayas seguido estos pasos, la aplicación estará disponible en `http://localhost:3000/`.
+Una vez que hayas seguido estos pasos, la aplicación estará disponible en `http://localhost:5000/`.
 
 ## Funcionalidades
 
