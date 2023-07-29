@@ -20,17 +20,14 @@ export const BooksProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    // Intentar cargar los datos desde localStorage al iniciar la aplicación
     const cachedBooks = localStorage.getItem('cachedBooks')
     if (cachedBooks) {
       setBooks(JSON.parse(cachedBooks))
     } else {
-      // Si no hay datos en localStorage, cargar los libros desde el servidor
       allBooks()
     }
   }, [])
 
-  // Guardar los libros en localStorage cada vez que se actualicen
   useEffect(() => {
     localStorage.setItem('cachedBooks', JSON.stringify(books))
   }, [books])

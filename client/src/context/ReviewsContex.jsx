@@ -1,4 +1,5 @@
 import { createContext, useContext } from 'react'
+import { createReview } from '../api/review'
 
 const ReviewContext = createContext()
 
@@ -11,15 +12,27 @@ export const useReviews = () => {
 }
 
 export const ReviewProvider = ({ children }) => {
-  const createReview = async (review) => {
+  const reviewF = async (review) => {
     console.log(
-      '🚀 ~ file: ReviewsContex.jsx:15 ~ createReview ~ review:',
+      '🚀 ~ file: ReviewsContex.jsx:16 ~ createReview ~ review:',
       review
     )
+    try {
+      const data = await createReview(review)
+      console.log(
+        '🚀 ~ file: ReviewsContex.jsx:17 ~ createReview ~ data:',
+        data
+      )
+    } catch (error) {
+      console.log(
+        '🚀 ~ file: ReviewsContex.jsx:27 ~ createReview ~ error:',
+        error
+      )
+    }
   }
 
   return (
-    <ReviewContext.Provider value={{ createReview }}>
+    <ReviewContext.Provider value={{ reviewF }}>
       {children}
     </ReviewContext.Provider>
   )

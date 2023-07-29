@@ -13,15 +13,15 @@ const LoginPage = () => {
 
   const navigate = useNavigate()
   useEffect(() => {
-    if (isAuthenticating) navigate('/books')
+    if (isAuthenticating) navigate('/')
   }, [isAuthenticating])
 
   const onSubmite = handleSubmit(async (data) => {
     await signin(data)
   })
   return (
-    <div className='flex justify-center items-center h-screen'>
-      <div className='bg-zinc-800 max-w-md p-10 rounded-md'>
+    <div className='flex justify-center items-center pt-14'>
+      <div className='shadow-2xl max-w-md p-10 rounded-md'>
         {authError.map((error, index) => (
           <p className='text-red-500' key={index}>
             {error}
@@ -33,24 +33,30 @@ const LoginPage = () => {
             type='email'
             {...register('email', { required: true })}
             placeholder='Email'
-            className='w-full bg-zinc-700 text-white px-4 rounded-md'
+            className=' border-2 border-gray-400  rounded-md p-2 font-Barlow text-lg bg-white'
           />
           {errors.email && <p className='text-red-500'>Email is required</p>}
           <input
             type='password'
             {...register('password', { required: true })}
             placeholder='Password'
-            className='w-full bg-zinc-700 text-white px-4 rounded-md'
+            className='border-2 border-gray-400  rounded-md p-2 font-Barlow text-lg bg-white'
           />
           {errors.password && (
             <p className='text-red-500'>Password is required</p>
           )}
-          <button type='submite'>Login</button>
+          <button
+            className='border-2 border-gray-400  rounded-md p-2 font-Barlow text-lg bg-white uppercase hover:bg-gray-500'
+            type='submite'>
+            sing in
+          </button>
         </form>
-        <p className='flex justify-center gap-x-2 '>
-          Dont have an account?{' '}
+        <p className='flex justify-center gap-x-2 mt-4 uppercase'>
+          <span className='text-sm'>Dont have an account?</span>{' '}
           <Link to='/register' className='text-sky-500'>
-            Sign Up
+            <span className='text-sm border-2 border-sky-500 p-1 rounded-md hover:bg-sky-500 hover:text-white transition-all duration-300 ease-in-out cursor-pointer '>
+              Sign Up
+            </span>
           </Link>
         </p>
       </div>
